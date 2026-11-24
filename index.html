@@ -15,6 +15,7 @@
     <nav>
       <a href="#about">关于</a>
       <a href="#calculator">计算器</a>
+      <a href="#tetris">方块</a>
     </nav>
   </header>
 
@@ -22,7 +23,7 @@
     <section class="hero">
       <p class="hero-kicker">个人网站</p>
       <h1>你好，我是 Tape</h1>
-      <p class="hero-lead">用最简单的 HTML、CSS 和 JavaScript 搭的小站。下面有一个能用的计算器。</p>
+      <p class="hero-lead">用最简单的 HTML、CSS 和 JavaScript 搭的小站。下面有计算器，右下角还能玩俄罗斯方块。</p>
       <a class="btn" href="#calculator">试试计算器</a>
     </section>
 
@@ -68,6 +69,53 @@
           <button type="button" class="key key-zero" data-action="digit" data-value="0">0</button>
           <button type="button" class="key" data-action="decimal">.</button>
           <button type="button" class="key key-eq" data-action="equals">=</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tetris" class="tetris-section">
+      <h2>俄罗斯方块</h2>
+      <p class="section-desc">方向键移动与旋转，空格硬降。手机可用下方按钮。</p>
+
+      <div class="tetris" role="application" aria-label="俄罗斯方块">
+        <div class="tetris-meta">
+          <div class="tetris-stat">
+            <span class="tetris-label">分数</span>
+            <strong id="tetris-score">0</strong>
+          </div>
+          <div class="tetris-stat">
+            <span class="tetris-label">行数</span>
+            <strong id="tetris-lines">0</strong>
+          </div>
+          <div class="tetris-stat">
+            <span class="tetris-label">等级</span>
+            <strong id="tetris-level">1</strong>
+          </div>
+          <div class="tetris-next">
+            <span class="tetris-label">下一个</span>
+            <canvas id="tetris-next" width="80" height="80" aria-hidden="true"></canvas>
+          </div>
+        </div>
+
+        <div class="tetris-board-wrap">
+          <canvas id="tetris-board" width="240" height="480" aria-label="游戏区域"></canvas>
+          <div class="tetris-overlay" id="tetris-overlay">
+            <p id="tetris-overlay-text">按开始游戏</p>
+            <button type="button" class="btn tetris-start" id="tetris-start">开始游戏</button>
+          </div>
+        </div>
+
+        <div class="tetris-actions">
+          <button type="button" class="key key-fn" id="tetris-pause" disabled>暂停</button>
+          <button type="button" class="key key-fn" id="tetris-restart">重开</button>
+        </div>
+
+        <div class="tetris-pad" aria-label="触控操作">
+          <button type="button" class="key" data-tetris="left" aria-label="左移">←</button>
+          <button type="button" class="key" data-tetris="rotate" aria-label="旋转">↻</button>
+          <button type="button" class="key" data-tetris="right" aria-label="右移">→</button>
+          <button type="button" class="key" data-tetris="soft" aria-label="软降">↓</button>
+          <button type="button" class="key key-eq" data-tetris="hard" aria-label="硬降">空格</button>
         </div>
       </div>
     </section>
