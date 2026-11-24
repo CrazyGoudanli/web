@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tape · 个人网站</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">Tape</a>
+    <nav>
+      <a href="#about">关于</a>
+      <a href="#calculator">计算器</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="hero-kicker">个人网站</p>
+      <h1>你好，我是 Tape</h1>
+      <p class="hero-lead">用最简单的 HTML、CSS 和 JavaScript 搭的小站。下面有一个能用的计算器。</p>
+      <a class="btn" href="#calculator">试试计算器</a>
+    </section>
+
+    <section id="about" class="about">
+      <h2>关于我</h2>
+      <p>
+        喜欢把想法做成能点、能算、能打开的小东西。
+        这个页面没有框架、没有构建工具——打开就能看。
+      </p>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <h2>计算器</h2>
+      <p class="section-desc">加减乘除、小数、正负号和百分号都支持。</p>
+
+      <div class="calculator" role="application" aria-label="计算器">
+        <div class="display" aria-live="polite">
+          <div class="expression" id="expression"></div>
+          <div class="result" id="display">0</div>
+        </div>
+
+        <div class="keys">
+          <button type="button" class="key key-fn" data-action="clear">AC</button>
+          <button type="button" class="key key-fn" data-action="sign">±</button>
+          <button type="button" class="key key-fn" data-action="percent">%</button>
+          <button type="button" class="key key-op" data-action="operator" data-value="/">÷</button>
+
+          <button type="button" class="key" data-action="digit" data-value="7">7</button>
+          <button type="button" class="key" data-action="digit" data-value="8">8</button>
+          <button type="button" class="key" data-action="digit" data-value="9">9</button>
+          <button type="button" class="key key-op" data-action="operator" data-value="*">×</button>
+
+          <button type="button" class="key" data-action="digit" data-value="4">4</button>
+          <button type="button" class="key" data-action="digit" data-value="5">5</button>
+          <button type="button" class="key" data-action="digit" data-value="6">6</button>
+          <button type="button" class="key key-op" data-action="operator" data-value="-">−</button>
+
+          <button type="button" class="key" data-action="digit" data-value="1">1</button>
+          <button type="button" class="key" data-action="digit" data-value="2">2</button>
+          <button type="button" class="key" data-action="digit" data-value="3">3</button>
+          <button type="button" class="key key-op" data-action="operator" data-value="+">+</button>
+
+          <button type="button" class="key key-zero" data-action="digit" data-value="0">0</button>
+          <button type="button" class="key" data-action="decimal">.</button>
+          <button type="button" class="key key-eq" data-action="equals">=</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Tape · 纯前端小站</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
